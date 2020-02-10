@@ -15,4 +15,4 @@ endif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
 
 install(TARGETS otemplate DESTINATION ${CMAKE_INSTALL_BINDIR})
 
-add_subdirectory(templatetags)
+## add_subdirectory(templatetags)

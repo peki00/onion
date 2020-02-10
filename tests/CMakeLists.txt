@@ -12,7 +12,9 @@ add_subdirectory(05-sessions)
 
 #add_subdirectory(06-handlers)
 
+if (OTEMPLATE)
 add_subdirectory(07-tools)
+endif (OTEMPLATE)
 
 ADD_CUSTOM_TARGET(auto.sh ALL DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/auto.sh
 	COMMAND test "${CMAKE_CURRENT_SOURCE_DIR}" = "${CMAKE_CURRENT_BINARY_DIR}" || cp ${CMAKE_CURRENT_SOURCE_DIR}/auto.sh  ${CMAKE_CURRENT_BINARY_DIR}/auto.sh
@@ -23,7 +25,9 @@ ADD_CUSTOM_TARGET(onion.ini ALL DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/onion.ini
 	)
 
 if (${ONION_USE_BINDINGS_CPP})
+if (OTEMPLATE)
 	add_subdirectory(08-cpp)
+endif (OTEMPLATE)
 endif()
 
 if (${XML2_ENABLED})
